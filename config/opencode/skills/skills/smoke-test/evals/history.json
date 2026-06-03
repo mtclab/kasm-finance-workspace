@@ -1,0 +1,21 @@
+{
+  "started_at": "2026-05-11T12:58:44.749737+00:00",
+  "skill_name": "smoke-test",
+  "current_best": "v1",
+  "iterations": [
+    {
+      "version": "v0",
+      "parent": "v0",
+      "expectation_pass_rate": 0.0,
+      "grading_result": "baseline",
+      "is_current_best": false
+    },
+    {
+      "version": "v1",
+      "parent": "v0",
+      "expectation_pass_rate": 1.0,
+      "grading_result": "won",
+      "is_current_best": true
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  "provider": {
+    "LocalAI": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "LocalAI (local)",
+      "options": {
+        "baseURL": "http://localai:8080/v1"
+      },
+      "models": {
+        "qwen3.6-27b": {},
+        "qwen3.6-35b-a3b": {}
+      }
+    },
+    "ollama": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Ollama",
+      "options": {
+        "baseURL": "http://open-webui-ollama:11434/v1"
+      },
+      "models": {
+        "kimi-k2.6:cloud": {},
+        "deepseek-v4-pro:cloud": {},
+        "deepseek-v4-flash:cloud": {},
+        "deepseek-v3.2:cloud": {},
+        "kimi-k2.5:cloud": {},
+        "glm-5.1:cloud": {},
+        "glm-5:cloud": {},
+        "minimax-m2.7:cloud": {},
+        "minimax-m2.5:cloud": {},
+        "qwen3.5:cloud": {},
+        "qwen3-coder-next:cloud": {},
+        "nemotron-3-super:cloud": {},
+        "gemma4:26b": {},
+        "qwen3.6:35b": {},
+        "qwen3.6:27b": {},
+        "gemma4:e4b": {},
+        "mistral:latest": {}
+      }
+    }
+  },
+
+  "model": "ollama/kimi-k2.6:cloud",
+
+  "agent": {
+    "architect": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/architect.md}",
+      "hidden": true
+    },
+    "po": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/po.md}",
+      "hidden": true
+    },
+    "pm": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/pm.md}",
+      "hidden": true
+    },
+    "coder": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/coder.md}",
+      "hidden": false
+    },
+    "coder-web": {
+      "mode": "subagent",
+      "model": "ollama/glm-5.1:cloud",
+      "prompt": "{file:~/.config/opencode/agents/coder-web.md}",
+      "hidden": true
+    },
+    "reviewer": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/reviewer.md}",
+      "hidden": true
+    },
+    "qa": {
+      "mode": "subagent",
+      "model": "ollama/kimi-k2.6:cloud",
+      "prompt": "{file:~/.config/opencode/agents/qa.md}",
+      "hidden": true
+    },
+    "security": {
+      "mode": "subagent",
+      "model": "ollama/glm-5.1:cloud",
+      "prompt": "{file:~/.config/opencode/agents/security.md}",
+      "hidden": true
+    },
+    "ux": {
+      "mode": "subagent",
+      "model": "ollama/glm-5.1:cloud",
+      "prompt": "{file:~/.config/opencode/agents/ux.md}",
+      "hidden": true
+    },
+    "infraops": {
+      "mode": "subagent",
+      "model": "ollama/minimax-m2.7:cloud",
+      "prompt": "{file:~/.config/opencode/agents/infraops.md}",
+      "hidden": true
+    },
+    "dataengineer": {
+      "mode": "subagent",
+      "model": "ollama/glm-5.1:cloud",
+      "prompt": "{file:~/.config/opencode/agents/dataengineer.md}",
+      "hidden": true
+    },
+    "integrator": {
+      "mode": "subagent",
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "prompt": "{file:~/.config/opencode/agents/integrator.md}",
+      "hidden": true
+    },
+    "devops": {
+      "mode": "subagent",
+      "model": "ollama/minimax-m2.7:cloud",
+      "prompt": "{file:~/.config/opencode/agents/devops.md}",
+      "hidden": true
+    },
+    "navigator": {
+      "mode": "subagent",
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "prompt": "{file:~/.config/opencode/agents/navigator.md}",
+      "hidden": true
+    }
+  },
+
+  "mcp": {
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp"
+    },
+    "matrix": {
+      "type": "local",
+      "enabled": true,
+      "command": ["/home/kasm-user/repot/agent-venv/bin/python3", "-m", "homepilot.mcp.matrix_server"],
+      "env": {
+        "MATRIX_SERVER": "https://matrix.mtcchat.com",
+        "HP_SECRETS_DIR": "/home/kasm-user/.config/opencode/secrets",
+        "PYTHONPATH": "/home/kasm-user/repot/homepilot-v2/src"
+      },
+      "timeout": 30000
+    },
+    "zabbix": {
+      "type": "local",
+      "enabled": true,
+      "command": ["/home/kasm-user/.config/opencode/scripts/zabbix-mcp-wrapper.sh"],
+      "env": {
+        "READ_ONLY": "true",
+        "ZABBIX_MCP_TRANSPORT": "stdio"
+      },
+      "timeout": 30000
+    },
+    "playwright": {
+      "type": "local",
+      "enabled": true,
+      "command": ["/usr/local/bin/playwright-mcp", "--browser", "chromium"],
+      "timeout": 30000
+    },
+    "proxmox": {
+      "type": "local",
+      "enabled": true,
+      "command": ["/home/kasm-user/.config/opencode/scripts/proxmox-mcp-wrapper.sh"],
+      "env": {
+        "PROXMOX_ALLOW_ELEVATED": "true",
+        "PROXMOX_VERIFY": "false"
+      },
+      "timeout": 60000
+    }
+  }
+}

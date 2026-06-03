@@ -1,0 +1,37 @@
+{
+  "skill_name": "smoke-test",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "run a quick check on the server",
+      "expected_output": "Runs smoke-test.sh against the live HomePilot instance",
+      "expectations": [
+        "skill mentions smoke-test.sh",
+        "skill mentions HP_TEST_URL",
+        "skill mentions health endpoint",
+        "skill mentions 7/7 checks"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "verify all endpoints are working",
+      "expected_output": "Runs smoke test to check health, artifacts, inventory, drift, kb, refresh, MCP",
+      "expectations": [
+        "skill mentions artifacts endpoint",
+        "skill mentions inventory endpoint",
+        "skill mentions drift endpoint",
+        "skill mentions MCP endpoint"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "smoke test the API",
+      "expected_output": "Runs smoke-test.sh with correct URL and token",
+      "expectations": [
+        "skill mentions smoke-test.sh",
+        "skill mentions token environment variable",
+        "skill mentions URL environment variable"
+      ]
+    }
+  ]
+}

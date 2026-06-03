@@ -1,0 +1,14 @@
+{
+  "started_at": "2026-05-11T12:59:50.601728+00:00",
+  "skill_name": "skill-creator",
+  "current_best": "v0",
+  "iterations": [
+    {
+      "version": "v0",
+      "parent": "v0",
+      "expectation_pass_rate": 1.0,
+      "grading_result": "baseline",
+      "is_current_best": true
+    }
+  ]
+}

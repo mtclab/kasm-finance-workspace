@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  finance-workspace:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ghcr.io/mtclab/kasm-finance-workspace:latest
+    container_name: kasm-finance-workspace
+    ports:
+      - "6901:6901"    # KasmVNC web interface (HTTPS)
+      - "8888:8888"    # Jupyter Lab
+    environment:
+      - VNC_PW=password
+      - DISPLAY=:1.0
+    volumes:
+      - finance-workspace-data:/home/kasm-user/repot
+      - finance-workspace-vscode:/home/kasm-user/.config/Code
+      - finance-workspace-openbb:/home/kasm-user/OpenBBUserData
+    shm_size: "2g"
+    restart: unless-stopped
+    security_opt:
+      - seccomp=unconfined
+
+volumes:
+  finance-workspace-data:
+  finance-workspace-vscode:
+  finance-workspace-openbb:

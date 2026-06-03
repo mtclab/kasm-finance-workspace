@@ -1,0 +1,26 @@
+# Build artifacts
+*.pyc
+__pycache__/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+*.pem
+*.key
+.env
+secrets/
+
+# Docker
+*.log
+
+# OpenBB user data (persisted in volume)
+OpenBBUserData/

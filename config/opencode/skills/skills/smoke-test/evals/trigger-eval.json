@@ -1,0 +1,20 @@
+{
+  "skill_name": "smoke-test",
+  "should_trigger": [
+    "run smoke test",
+    "quick check the server",
+    "verify endpoints work",
+    "health check against live",
+    "are all endpoints up",
+    "smoke test homepilot",
+    "check if the server is healthy"
+  ],
+  "should_not_trigger": [
+    "what time is it",
+    "write a python script",
+    "deploy to production",
+    "run unit tests",
+    "commit my changes",
+    "what does the code do"
+  ]
+}

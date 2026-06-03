@@ -1,0 +1,29 @@
+{
+  "skill_name": "skill-creator",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "create a skill for running database migrations",
+      "expected_output": "Guides through discover-draft-eval-iterate-install process for a migration skill",
+      "expectations": [
+        "skill mentions discover phase",
+        "skill mentions draft phase",
+        "skill mentions eval phase",
+        "skill mentions iterate phase",
+        "skill mentions SKILL.md format",
+        "skill mentions evals/evals.json"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I keep running the same deploy commands over and over, can we make a skill?",
+      "expected_output": "Identifies repetitive pattern and creates a skill through the draft-eval loop",
+      "expectations": [
+        "skill mentions trigger condition",
+        "skill mentions when to use me",
+        "skill mentions failure modes",
+        "skill mentions description optimization"
+      ]
+    }
+  ]
+}

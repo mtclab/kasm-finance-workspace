@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/glm-5.1:cloud", "ollama/deepseek-v4-pro:cloud"]
+    },
+    "hephaestus": {
+      "model": "ollama/deepseek-v4-pro:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "oracle": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/glm-5.1:cloud", "ollama/deepseek-v4-pro:cloud"]
+    },
+    "prometheus": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/glm-5.1:cloud"]
+    },
+    "metis": {
+      "model": "ollama/glm-5.1:cloud",
+      "fallback_models": ["ollama/kimi-k2.5:cloud"]
+    },
+    "atlas": {
+      "model": "ollama/glm-5.1:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "momus": {
+      "model": "ollama/deepseek-v4-pro:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "librarian": {
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "fallback_models": ["ollama/minimax-m2.7:cloud"]
+    },
+    "explore": {
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "fallback_models": ["ollama/minimax-m2.7:cloud", "ollama/nemotron-3-super:cloud"]
+    },
+    "multimodal-looker": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/glm-5.1:cloud"]
+    },
+    "sisyphus-junior": {
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "fallback_models": ["ollama/glm-5:cloud"]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "ollama/glm-5.1:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "ultrabrain": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/deepseek-v4-pro:cloud"]
+    },
+    "deep": {
+      "model": "ollama/deepseek-v4-pro:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "quick": {
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "fallback_models": ["ollama/minimax-m2.7:cloud"]
+    },
+    "unspecified-low": {
+      "model": "ollama/deepseek-v4-flash:cloud",
+      "fallback_models": ["ollama/minimax-m2.7:cloud"]
+    },
+    "unspecified-high": {
+      "model": "ollama/kimi-k2.6:cloud",
+      "fallback_models": ["ollama/glm-5.1:cloud"]
+    },
+    "writing": {
+      "model": "ollama/glm-5.1:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    },
+    "artistry": {
+      "model": "ollama/glm-5.1:cloud",
+      "fallback_models": ["ollama/kimi-k2.6:cloud"]
+    }
+  }
+}
